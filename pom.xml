@@ -3,31 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!--最上层dependencies-->
     <parent>
         <groupId>com.xxxx.commons</groupId>
         <artifactId>xxxx-spring-boot-dependencies</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <!--parent配置-->
     <groupId>com.xxxx.commons</groupId>
     <artifactId>xxxx-spring-boot-starter-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
     <description>xxxx spring-boot项目的parent pom.xml所有的spring-boot应用都继承该pom.xml</description>
-    <url>http://www.xxxxii.com</url>
+    <url>http://www.xxxx.com</url>
 
+    <!--版本管理-->
     <properties>
         <xxxx-commons-redis.version>1.0-SNAPSHOT</xxxx-commons-redis.version>
         <xxxx-commons.version>1.0-SNAPSHOT</xxxx-commons.version>
+        <xxxx-commons-support.version>1.0-SNAPSHOT</xxxx-commons-support.version>
+        <xxxx-commons-support-web.version>1.0-SNAPSHOT</xxxx-commons-support-web.version>
+        <xxxx-scheduler-admin-core.version>1.0-SNAPSHOT</xxxx-scheduler-admin-core.version>
+        <xxxx-commons-mail.version>1.0-SNAPSHOT</xxxx-commons-mail.version>
+        <xxxx-file-upload-sdk>1.0-SNAPSHOT</xxxx-file-upload-sdk>
         <jwt-version>3.4.0</jwt-version>
         <passport-version>1.0.3.1</passport-version>
-
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!--这里封装一些公司级别的 公共的项目，比如jwt-->
             <dependency>
                 <groupId>com.xxxx.commons</groupId>
                 <artifactId>xxxx-commons-redis</artifactId>
@@ -38,17 +45,30 @@
                 <artifactId>xxxx-commons</artifactId>
                 <version>${xxxx-commons.version}</version>
             </dependency>
-           
-            <dependency>
-                <groupId>com.carlife</groupId>
-                <artifactId>passport-sdk</artifactId>
-                <version>${passport-version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.xxxx.commons</groupId>
-                <artifactId>xxxx-job-core</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <artifactId>xxxx-scheduler-admin-core</artifactId>
+                <version>${xxxx-scheduler-admin-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxx.commons</groupId>
+                <artifactId>xxxx-commons-mail</artifactId>
+                <version>${xxxx-commons-mail.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxx.commons</groupId>
+                <artifactId>xxxx-commons-support</artifactId>
+                <version>${xxxx-commons-support.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxx.commons</groupId>
+                <artifactId>xxxx-commons-support-web</artifactId>
+                <version>${xxxx-commons-support-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxx.commons</groupId>
+                <artifactId>xxxx-file-upload-sdk</artifactId>
+                <version>${xxxx-file-upload-sdk.version}</version>
             </dependency>
 
         </dependencies>
