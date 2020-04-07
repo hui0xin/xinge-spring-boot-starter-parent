@@ -21,6 +21,7 @@
     <!--版本管理-->
     <properties>
         <xinge-commons-redis.version>1.0-SNAPSHOT</xinge-commons-redis.version>
+        <xinge-commons-lock.version>1.0-SNAPSHOT</xinge-commons-lock.version>
         <xinge-commons.version>1.0-SNAPSHOT</xinge-commons.version>
         <xinge-commons-support.version>1.0-SNAPSHOT</xinge-commons-support.version>
         <xinge-commons-support-web.version>1.0-SNAPSHOT</xinge-commons-support-web.version>
@@ -34,6 +35,11 @@
                 <groupId>com.xinge.commons</groupId>
                 <artifactId>xinge-commons-redis</artifactId>
                 <version>${xinge-commons-redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xinge.commons</groupId>
+                <artifactId>xinge-commons-lock</artifactId>
+                <version>${xinge-commons-lock.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.xinge.commons</groupId>
