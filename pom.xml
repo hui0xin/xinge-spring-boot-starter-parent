@@ -5,66 +5,68 @@
     <modelVersion>4.0.0</modelVersion>
     <!--parent-->
     <parent>
-        <groupId>com.xinge.commons</groupId>
-        <artifactId>xinge-spring-boot-dependencies</artifactId>
+        <groupId>com.xin.commons</groupId>
+        <artifactId>xin-spring-boot-dependencies</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.xinge.commons</groupId>
-    <artifactId>xinge-spring-boot-starter-parent</artifactId>
+    <groupId>com.xin.commons</groupId>
+    <artifactId>xin-spring-boot-starter-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
+
     <description>公司所有项目的父pom，所有项目都依赖它</description>
+    <!--个人博客地址-->
     <url>https://www.jianshu.com/u/6ad247189165</url>
 
     <!--版本管理-->
     <properties>
-        <xinge-commons-redis.version>1.0-SNAPSHOT</xinge-commons-redis.version>
-        <xinge-commons-lock.version>1.0-SNAPSHOT</xinge-commons-lock.version>
-        <xinge-commons.version>1.0-SNAPSHOT</xinge-commons.version>
-        <xinge-commons-support.version>1.0-SNAPSHOT</xinge-commons-support.version>
-        <xinge-commons-support-web.version>1.0-SNAPSHOT</xinge-commons-support-web.version>
-        <xinge-commons-mail.version>1.0-SNAPSHOT</xinge-commons-mail.version>
-        <xinge-file-upload-sdk>1.0-SNAPSHOT</xinge-file-upload-sdk>
+        <xin-commons-redis.version>1.0-SNAPSHOT</xin-commons-redis.version>
+        <xin-commons-lock.version>1.0-SNAPSHOT</xin-commons-lock.version>
+        <xin-commons.version>1.0-SNAPSHOT</xin-commons.version>
+        <xin-commons-support.version>1.0-SNAPSHOT</xin-commons-support.version>
+        <xin-commons-support-web.version>1.0-SNAPSHOT</xin-commons-support-web.version>
+        <xin-commons-mail.version>1.0-SNAPSHOT</xin-commons-mail.version>
+        <xin-file-upload-sdk>1.0-SNAPSHOT</xin-file-upload-sdk>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons-redis</artifactId>
-                <version>${xinge-commons-redis.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons-redis</artifactId>
+                <version>${xin-commons-redis.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons-lock</artifactId>
-                <version>${xinge-commons-lock.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons-lock</artifactId>
+                <version>${xin-commons-lock.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons</artifactId>
-                <version>${xinge-commons.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons</artifactId>
+                <version>${xin-commons.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons-mail</artifactId>
-                <version>${xinge-commons-mail.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons-mail</artifactId>
+                <version>${xin-commons-mail.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons-support</artifactId>
-                <version>${xinge-commons-support.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons-support</artifactId>
+                <version>${xin-commons-support.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-commons-support-web</artifactId>
-                <version>${xinge-commons-support-web.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-commons-support-web</artifactId>
+                <version>${xin-commons-support-web.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.xinge.commons</groupId>
-                <artifactId>xinge-file-upload-sdk</artifactId>
-                <version>${xinge-file-upload-sdk.version}</version>
+                <groupId>com.xin.commons</groupId>
+                <artifactId>xin-file-upload-sdk</artifactId>
+                <version>${xin-file-upload-sdk.version}</version>
             </dependency>
 
         </dependencies>
@@ -99,5 +101,69 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- 指定仓库-->
+    <repositories>
+        <repository>
+            <id>nexus-xin-releases</id>
+            <url>http://nexus.xin.com/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>nexus-xin-snapshots</id>
+            <url>http://nexus.xin.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 指定插件仓库仓库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-xin-releases</id>
+            <url>http://nexus.xin.com/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>nexus-xin-snapshots</id>
+            <url>http://nexus.xin.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!-- 项目发布-->
+    <distributionManagement>
+        <repository>
+            <id>nexus-xin-releases</id>
+            <url>http://nexus.xin.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-xin-snapshots</id>
+            <url>http://nexus.xin.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
